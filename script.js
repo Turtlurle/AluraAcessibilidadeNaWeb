@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
 
     botaoDeAcessibilidade.addEventListener('click', function () {
+        const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
+        botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado)
         botaoDeAcessibilidade.classList.toggle('rotacao-botao');
         opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
     });
